@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+	</head>
+	<body>
+		<h1>My Food Tracker - View Meal</h1>
+		<form role="form" action="" method="POST">
+		    {% csrf_token %}
+			<table class="table table-bordered table-striped">
+				<tbody>
+					<tr>
+						<th>calories</th>
+						<th>{{ meal.get_total_calories }}</th>
+					</tr>
+					<tr>
+						<th>saturated_fat</th>
+						<th>{{ meal.get_total_saturated_fat }}</th>
+					</tr>
+					<tr>
+						<th>cholesterol</th>
+						<th>{{ meal.get_total_cholesterol }}</th>
+					</tr>
+					<tr>
+						<th>total_carbohydrate</th>
+						<th>{{ meal.get_total_total_carbohydrate }}</th>
+					</tr>
+					<tr>
+						<th>dietary_fibre</th>
+						<th>{{ meal.get_total_dietary_fibre }}</th>
+					</tr>
+					<tr>
+						<th>sugar</th>
+						<th>{{ meal.get_total_sugar }}</th>
+					</tr>
+					<tr>
+						<th>protein</th>
+						<th>{{ meal.get_total_protein }}</th>
+					</tr>
+
+				</tbody>
+			</table>
+			<a href="{% url "food:index" %}" class="btn btn-info">Back</a>
+		</form>
+	</body>
+</html>
